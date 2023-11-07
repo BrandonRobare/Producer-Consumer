@@ -22,11 +22,10 @@ void producer(SharedData* data) {
 
         sem_wait(&emptySlots); // Wait for an empty slot
         // Lock the critical section for adding an item to the table
-        // (simulated by sleep for demonstration purposes)
         std::this_thread::sleep_for(std::chrono::milliseconds(1000));
 
         // Add the item to the table
-        data->table[data->itemCount] = 1; // For simplicity, we use '1' to represent an item
+        data->table[data->itemCount] = 1; //1 is placeholder
         data->itemCount++;
 
         std::cout << "Produced an item. Items on the table: " << data->itemCount << std::endl;
